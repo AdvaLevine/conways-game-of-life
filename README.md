@@ -55,8 +55,6 @@ An interactive implementation of Conway's Game of Life cellular automaton built 
 
 ## Technical Details
 
-- Built with vanilla JavaScript
+- Built with JavaScript
 - Implements the MVC (Model-View-Controller) design pattern
-- Uses CSS Grid for responsive layout
-- Optimized for Chrome browser
-- Desktop focused experience 
+- Uses CSS Grid for layout
