@@ -2,8 +2,6 @@
 
 An interactive implementation of Conway's Game of Life cellular automaton built with HTML, CSS, and JavaScript using the Model-View-Controller (MVC) architecture.
 
-![Conway's Game of Life](https://en.wikipedia.org/wiki/Conway%27s_Game_of_Life)
-
 ## Features
 
 - Responsive grid with multiple size options (20x20, 40x40, 60x60)
