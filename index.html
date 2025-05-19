@@ -1,0 +1,114 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Conway's Game of Life</title>
+    <link rel="stylesheet" href="css/styles.css">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/5.15.4/css/all.min.css">
+</head>
+<body>
+    <div class="container">
+        <header>
+            <h1>Conway's Game of Life</h1>
+            <div class="theme-switch">
+                <label for="theme-toggle">Dark Mode</label>
+                <label class="switch">
+                    <input type="checkbox" id="theme-toggle">
+                    <span class="slider"></span>
+                </label>
+            </div>
+            <div class="generation-indicator">
+                <i class="fas fa-history"></i> <span id="generation-counter">0</span>
+            </div>
+        </header>
+        
+        <div class="controls">
+            <div class="control-group">
+                <button id="start-stop"><i class="fas fa-play"></i> Start</button>
+                <button id="clear"><i class="fas fa-trash-alt"></i> Clear</button>
+                <button id="random"><i class="fas fa-random"></i> Randomize</button>
+            </div>
+            
+            <div class="control-group">
+                <label for="grid-size"><i class="fas fa-th"></i> Grid Size:</label>
+                <select id="grid-size">
+                    <option value="20">20x20</option>
+                    <option value="40" selected>40x40</option>
+                    <option value="60">60x60</option>
+                </select>
+            </div>
+            
+            <div class="control-group">
+                <label for="speed"><i class="fas fa-tachometer-alt"></i> Speed:</label>
+                <input type="range" id="speed" min="0" max="10" value="5">
+                <span id="speed-value">5</span>
+            </div>
+            
+            <div class="control-group">
+                <label for="patterns"><i class="fas fa-cubes"></i> Patterns:</label>
+                <select id="patterns">
+                    <option value="glider" selected>Glider</option>
+                    <option value="blinker">Blinker</option>
+                    <option value="toad">Toad</option>
+                    <option value="beacon">Beacon</option>
+                    <option value="pulsar">Pulsar</option>
+                    <option value="gosperGliderGun">Gosper Glider Gun</option>
+                </select>
+                <button id="apply-pattern"><i class="fas fa-check"></i> Apply</button>
+            </div>
+            
+            <div class="control-group">
+                <button id="save"><i class="fas fa-save"></i> Save</button>
+                <button id="load"><i class="fas fa-upload"></i> Load</button>
+            </div>
+        </div>
+        
+        <div class="game-container">
+            <div id="game-grid" class="game-grid"></div>
+        </div>
+        
+        <footer>
+            <p><i class="fas fa-info-circle"></i> Click on cells to toggle them when simulation is stopped.</p>
+            <p class="copyright">&copy; <span id="current-year"></span> Conway's Game of Life</p>
+        </footer>
+    </div>
+    
+    <script src="js/model.js"></script>
+    <script src="js/view.js"></script>
+    <script src="js/controller.js"></script>
+    <script>
+        // Set current year in copyright
+        document.getElementById('current-year').textContent = new Date().getFullYear();
+        
+        // Theme toggle functionality is now handled in controller.js
+        
+        // Update speed value display
+        const speedInput = document.getElementById('speed');
+        const speedValue = document.getElementById('speed-value');
+        
+        // Set slider width
+        speedInput.style.width = '150px';
+        
+        // Update value display initially
+        speedValue.textContent = speedInput.value;
+        
+        // Set initial fill percentage
+        updateSliderFill(speedInput.value);
+        
+        // Add event listener for changes
+        speedInput.addEventListener('input', () => {
+            speedValue.textContent = speedInput.value;
+            updateSliderFill(speedInput.value);
+        });
+        
+        // Function to update the slider's fill effect
+        function updateSliderFill(value) {
+            const min = parseInt(speedInput.min);
+            const max = parseInt(speedInput.max);
+            const percentage = ((value - min) / (max - min)) * 100;
+            speedInput.style.setProperty('--slider-percentage', `${percentage}%`);
+        }
+    </script>
+</body>
+</html> 
