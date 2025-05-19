@@ -4,6 +4,9 @@
 - **Name of the tool**: Claude 3.7 sonnet AI in Cursor IDE
 - **Why selected**: Claude offers advanced capabilities for code generation and explanation, and Cursor IDE provides an integrated environment for coding assistance, during our classes we've used cursor hence i'm the most comfortable using it to complete this task.
 
+## Repository Link
+- **GitHub Repository**: [https://github.com/AdvaLevine/conways-game-of-life](https://github.com/AdvaLevine/conways-game-of-life)
+
 ## Prompting Strategy
 
 ### Effective Prompts
