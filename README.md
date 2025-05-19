@@ -16,11 +16,29 @@ An interactive implementation of Conway's Game of Life cellular automaton built 
 
 ## How to Use
 
-1. Open `index.html` in your browser (Chrome recommended)
-2. Use the controls to set grid size, speed, and patterns
-3. Click 'Start' to begin the simulation or 'Stop' to pause it
-4. Click individual cells to toggle them when the simulation is stopped
-5. Use keyboard shortcuts for quick actions:
+### Option 1: Run directly
+1. Clone this repository:
+   ```
+   git clone https://github.com/AdvaLevine/conways-game-of-life.git
+   ```
+2. Navigate to the project folder:
+   ```
+   cd conways-game-of-life
+   ```
+3. Open `index.html` in your browser (Chrome recommended)
+
+### Option 2: Download as ZIP
+1. Go to the [repository page](https://github.com/AdvaLevine/conways-game-of-life)
+2. Click the green "Code" button
+3. Select "Download ZIP"
+4. Extract the ZIP file
+5. Open the extracted folder and double-click `index.html`
+
+### Playing the Game
+1. Use the controls to set grid size, speed, and patterns
+2. Click 'Start' to begin the simulation or 'Stop' to pause it
+3. Click individual cells to toggle them when the simulation is stopped
+4. Use keyboard shortcuts for quick actions:
    - Space: Start/Stop
    - R: Randomize
    - C: Clear
